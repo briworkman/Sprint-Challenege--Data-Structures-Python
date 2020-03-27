@@ -18,12 +18,21 @@ duplicates = []  # Return the list of duplicates in this data structure
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
+
+# ! MVP
+# runtime is about 0.1 secons
 binary = BinarySearchTree('names')
 for name in names_1:
     binary.insert(name)
 for names_2 in names_2:
     if binary.contains(names_2):
         duplicates.append(names_2)
+
+# ! Stretch
+# runtime is about 1.2 seconds
+# for name_1 in names_1:
+#     duplicates.append(name_1)
+# duplicates = [i for i in names_2 if i in duplicates]
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
